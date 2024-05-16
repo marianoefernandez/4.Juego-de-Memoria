@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Juego de memoria</string>
+    <string name="title_activity_main">Juego de memoria</string>
+    <string name="package_name">juego.memoria</string>
+    <string name="custom_url_scheme">juego.memoria</string>
+</resources>

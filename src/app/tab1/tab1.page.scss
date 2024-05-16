@@ -1,0 +1,151 @@
+.card {
+    position: relative;
+    width: auto;
+    height: 27%;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: .5s;
+    margin: 5px 20px;
+}
+
+.facil
+{
+    background: #4bb42e;
+}
+
+.medio
+{
+    opacity: 0.9;
+    background: #ff62c3;
+}
+
+.dificil
+{
+    background: #1a8ae5;
+}
+
+.card .description {
+    // height: 350px;
+    padding: 20px 10px 10px 10px;
+    text-align: center;
+}
+
+.tiempo
+{
+    margin-top: 2%;
+    text-align: center;
+}
+
+.tiempo h3
+{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.juego
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tabla
+{
+    background-color: rgb(135, 22, 22);
+    border: black 1.5px solid;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 80%;
+    min-height: 450px;
+}
+
+.carta
+{
+    border: black 2.5px solid;
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: rgba(243, 234, 234, 0.885);
+    // opacity: 0.9;
+}
+
+.card .description h3 {
+    color: #000000;
+    font-size: x-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+}
+
+.confirmacion
+{
+    position: absolute;
+    text-align: center;
+    width: 90%;
+    top: 27%;
+    border: black 1.5px solid;
+}
+
+.confirmacion h2
+{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+.confirmacion h3
+{
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.confirmacion button
+{
+    margin-top: 5px;
+    color: #000000;
+}
+
+.imagen
+{
+    width: 80%;
+    height: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.imagen_cubierta
+{
+    width: 100%;
+    height: 100%;
+}
+
+// .carta:hover
+// {
+//     border: violet solid 3px;
+//     opacity: 1;
+// }
+
+button
+{
+    border: black 1.5px solid;
+    margin-left: 27%;
+    margin-right: 27%;
+    position: relative;
+    opacity: 0.9;
+}
+
+button:hover
+{
+    border: rgb(22, 13, 189) 3px solid;
+    position: relative;
+    opacity: 1;
+}
+
+// .card:hover {
+//     box-shadow: 0 5px 15px rgba(3, 89, 92, .5);
+//     transform: translateY(-15px);
+// }
+
+

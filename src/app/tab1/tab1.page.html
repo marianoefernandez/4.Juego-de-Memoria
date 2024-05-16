@@ -1,17 +1,108 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <body style="margin-top: 27%; background-color:rgb(195, 45, 45)">
+    <div *ngIf="estadoJuego == 'menu'" class="card facil">    
+      <div class="description">
+        <h3>NIVEL FÁCIL</h3>
+        <p>En este nivel se juegan tres pares de imagenes (animales)</p>
+      </div> 
+      <button [disabled]="firestore.datosUsuarioActual != null && firestore.datosUsuarioActual.perfil == 'invitado'" class="btn bg-danger" (click)="empezarJuego('facil')">Jugar Ahora</button>
+    </div>
+  
+    <div *ngIf="estadoJuego == 'menu'" class="card medio">    
+      <div class="description">
+        <h3>NIVEL MEDIO</h3>
+        <p>En este nivel se juegan cinco pares de imagenes (herramientas)</p>
+      </div> 
+      <button [disabled]="firestore.datosUsuarioActual != null && firestore.datosUsuarioActual.perfil == 'invitado'" class="btn bg-danger" (click)="empezarJuego('medio')">Jugar Ahora</button>
+    </div>
+  
+    <div  *ngIf="estadoJuego == 'menu'" class="card dificil">    
+      <div class="description">
+        <h3>NIVEL DIFÍCIL</h3>
+        <p>En este nivel se juegan ocho pares de imagenes (frutas)</p>
+      </div> 
+      <button [disabled]="firestore.datosUsuarioActual != null && firestore.datosUsuarioActual.perfil == 'invitado'" class="btn bg-danger" (click)="empezarJuego('dificil')" >Jugar Ahora</button>
+    </div>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <div *ngIf="estadoJuego == 'jugando'" class="juego">
+      <div class="tiempo">
+        <h3>Tiempo: {{segundos}}.{{centesimas}} s</h3>
+      </div>
+
+      <div class="tabla" [ngStyle] = "{opacity:opacidad}">
+        <div [ngStyle]="{'height':valorTablaStr,'width':valorWith}" *ngFor="let carta of listaCartas; index as i;" class="carta">
+
+          <input type="image" *ngIf="carta.visible" class="imagen" src="{{carta.superficie}}" alt="">
+          <input (click)="voltearCarta(i)" type="image" *ngIf="!carta.visible" class="imagen_cubierta" src="../../assets/logo_empresa.png" alt="">
+
+          <!-- <img *ngIf="carta.visible" class="imagen" src="{{carta.superficie}}" alt="">
+          <img *ngIf="!carta.visible" class="imagen_cubierta" src="../../assets/logo_empresa.png" alt=""> -->
+        </div>
+      </div>
+
+      <!-- <h3 style="margin-top: 4%;">Cartas descubiertas: 2/6</h3> -->
+
+    </div>
+
+    <button [hidden]="!alertHidden" (click)="salirDelJuego()" *ngIf="estadoJuego == 'jugando'" class="btn bg-success" style="margin-left: 32%; color:black; margin-top: 4%;">Dejar de jugar</button>
+
+    <div [hidden]="alertHidden" class="card bg-light confirmacion">
+      <h2>Termino el juego</h2>
+      <h3>Se guardo su tiempo final: {{segundos}}.{{centesimas}} s</h3>
+      <button (click)="salirDelJuego()" class="btn bg-primary">Volver al menú</button>
+      <button (click)="empezarJuego(dificultad)" class="btn bg-danger">Jugar de nuevo</button>
+    </div>
+
+  </body>
+  <!-- <ion-button (click) ="cerrarSesion()">Cerrar Sesión</ion-button>
+  <ion-card id="NongModel">
+    <ion-card-header>Sin ngModel</ion-card-header>
+    <ion-item>
+      <ion-label>Nombre: </ion-label>
+      <ion-input type="text" #nom></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Apellido: </ion-label>
+      <ion-input type="text" #ape></ion-input>
+    </ion-item>
+
+    <ion-button color="primary" ion-button block (click)="MostrarDatos(nom.value, ape.value)">Mostrar Datos</ion-button>
+
+    <ion-card *ngIf="mostrar">
+
+      <ion-card-header>Tus Datos</ion-card-header>
+
+      <ion-card-content>
+
+        <h3>Nombre:</h3>
+        <p>{{nombre}}</p>
+
+        <h3>Apellido:</h3>
+        <p>{{apellido}}</p>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </ion-card>
+
+  <br>
+  <br>
+
+  <ion-card id="CongModel">
+
+    <ion-card-header>Con ngModel</ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Dirección: </ion-label>
+        <ion-input type="text" [(ngModel)]="direccion" name="dir"></ion-input>
+      </ion-item>
+      
+      <br> 
+      
+      Tu Dirección es: {{direccion}}
+
+    </ion-card-content>
+  </ion-card> -->
+
 </ion-content>

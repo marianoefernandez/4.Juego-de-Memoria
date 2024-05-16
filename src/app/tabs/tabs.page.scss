@@ -1,1 +1,12 @@
+.btn-cerrar
+{
+    margin-right: 10px; 
+    filter: invert(100%);
+    opacity: 0.8;
+}
 
+.btn-cerrar:hover
+{
+    border: 1px solid #00ffff;
+    opacity: 1;
+}

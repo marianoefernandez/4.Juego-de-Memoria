@@ -1,0 +1,104 @@
+.ranking
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-left: 5%;
+}
+
+* {
+    /* Change your font family */
+    font-family: sans-serif;
+}
+
+h2
+{
+    font-size: 20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-weight: bold;
+}
+
+.content-table {
+    border-collapse: collapse;
+    min-width: 80%;
+    max-width: 100%;
+    margin: 25px 0;
+    font-size: 0.9em;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+    border: black 1.5px solid;
+    background-color: #177a1f;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    border: black 1.5px solid;
+    padding: 1px 2px;
+    font-weight: bold;
+    text-align: center;
+    height: 60px
+}
+
+.content-table tbody tr:first-child {
+    border: black 1.5px solid;
+    background-color: gold;
+}
+
+.segundo
+{
+    border: black 1.5px solid;
+    background-color: #babdc0;
+}
+
+.tercero
+{
+    border: black 1.5px solid;
+    background-color:rgb(159, 102, 76)
+}
+
+.content-table tbody tr {
+    border: black 1.5px solid;
+}
+
+
+// .content-table tbody tr:nth-of-type(even) {
+//     background-color: #f3f3f3;
+// }
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 1.5px solid #000000;
+}
+
+.content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.icon{
+    width: 80px;
+    height: 80px;
+font-size:15px; 
+font-weight: bold;
+color:black;
+border: black 2px solid;
+    border-radius: 50%;
+    margin: 0 auto;
+opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.icon:hover
+{
+    opacity: 1;
+    border: rgb(0, 0, 0) 3.5px solid;
+}
